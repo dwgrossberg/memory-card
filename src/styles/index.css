@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
   overflow-x: auto;
-  min-width: 600px;
+  min-width: 300px;
   min-height: 600px;
   color: #393d3f;
 }
