@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/memory-card/static/css/main.2e87ac48.css",
+    "main.css": "/memory-card/static/css/main.4b1a81f7.css",
     "main.js": "/memory-card/static/js/main.e1970091.js",
     "static/media/spiral12.png": "/memory-card/static/media/spiral12.68c09be41beb248f7441.png",
     "static/media/spiral11.png": "/memory-card/static/media/spiral11.bc735c9b106431bf6086.png",
@@ -34,11 +34,11 @@
     "static/media/spiral16.png": "/memory-card/static/media/spiral16.14eea09ccc59b6f7054f.png",
     "static/media/triangle3.png": "/memory-card/static/media/triangle3.91acf41dc3030de9d40a.png",
     "index.html": "/memory-card/index.html",
-    "main.2e87ac48.css.map": "/memory-card/static/css/main.2e87ac48.css.map",
+    "main.4b1a81f7.css.map": "/memory-card/static/css/main.4b1a81f7.css.map",
     "main.e1970091.js.map": "/memory-card/static/js/main.e1970091.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e87ac48.css",
+    "static/css/main.4b1a81f7.css",
     "static/js/main.e1970091.js"
   ]
 }
