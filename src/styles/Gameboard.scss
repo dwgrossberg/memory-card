@@ -47,40 +47,48 @@
 .circle {
   background-color: #b4c2cf;
   border: 10px solid #632a50;
+  box-shadow: 0.5px 0.5px #b4c2cf;
   border-radius: 3px;
   &:hover {
     background-color: #632a50;
     border: 10px solid ghostwhite;
+    box-shadow: 1px 1px #632a50;
     cursor: pointer;
   }
 }
 .hex {
   background-color: #b4c2cf;
   border: 10px solid #745296;
+  box-shadow: 0.5px 0.5px #b4c2cf;
   border-radius: 3px;
   &:hover {
     background-color: #745296;
     border: 10px solid ghostwhite;
+    box-shadow: 1px 1px #745296;
     cursor: pointer;
   }
 }
 .triangle {
   background-color: #b4c2cf;
   border: 10px solid #91f5ad;
+  box-shadow: 0.5px 0.5px #b4c2cf;
   border-radius: 3px;
   &:hover {
     background-color: #91f5ad;
     border: 10px solid ghostwhite;
+    box-shadow: 1px 1px #91f5ad;
     cursor: pointer;
   }
 }
 .spiral {
   background-color: #b4c2cf;
   border: 10px solid #c2e812;
+  box-shadow: 0.5px 0.5px #b4c2cf;
   border-radius: 3px;
   &:hover {
     background-color: #c2e812;
     border: 10px solid ghostwhite;
+    box-shadow: 1px 1px #c2e812;
     cursor: pointer;
   }
 }
