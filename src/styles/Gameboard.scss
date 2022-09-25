@@ -1,7 +1,27 @@
 .Gameboard {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  .Circles {
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+    align-items: stretch;
+    gap: 20px;
+  }
+  .Hexes {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    align-items: stretch;
+    gap: 20px;
+  }
+  .Triangles {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    align-items: stretch;
+    gap: 20px;
+  }
   .Spirals {
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
@@ -24,7 +44,36 @@
     place-self: center;
   }
 }
-
+.circle {
+  background-color: #b4c2cf;
+  border: 10px solid #632a50;
+  border-radius: 3px;
+  &:hover {
+    background-color: #632a50;
+    border: 10px solid ghostwhite;
+    cursor: pointer;
+  }
+}
+.hex {
+  background-color: #b4c2cf;
+  border: 10px solid #745296;
+  border-radius: 3px;
+  &:hover {
+    background-color: #745296;
+    border: 10px solid ghostwhite;
+    cursor: pointer;
+  }
+}
+.triangle {
+  background-color: #b4c2cf;
+  border: 10px solid #91f5ad;
+  border-radius: 3px;
+  &:hover {
+    background-color: #91f5ad;
+    border: 10px solid ghostwhite;
+    cursor: pointer;
+  }
+}
 .spiral {
   background-color: #b4c2cf;
   border: 10px solid #c2e812;
