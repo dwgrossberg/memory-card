@@ -194,9 +194,15 @@ const Gameboard = (props) => {
   ]);
   return (
     <div className="Gameboard">
-      <div className="spiral">
+      <div className="Spirals">
         {spiral.map((item) => {
-          return <Card key={item.name} img={item.img} />;
+          return (
+            <Card
+              key={item.name}
+              img={item.img}
+              name={item.name.replace(/[0-9]/g, "")}
+            />
+          );
         })}
       </div>
     </div>

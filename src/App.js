@@ -5,12 +5,12 @@ import Header from "./components/Header";
 import "./styles/App.scss";
 
 const App = () => {
-  const [roundScore, setRoundScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+  const [score, setScore] = useState(0);
 
   return (
     <div className="App">
-      <Header />
+      <Header highScore={highScore} score={score} />
       <Gameboard />
       <Footer />
     </div>
