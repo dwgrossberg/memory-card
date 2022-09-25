@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Footer.css";
+import "../styles/Footer.scss";
 import gitHubIcon from "../assets/github.png";
 
 const Footer = (props) => {

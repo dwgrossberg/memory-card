@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Card from "./Card";
 import circleIMG_1 from "../assets/circle1.png";
 import circleIMG_2 from "../assets/circle2.png";
 import hexIMG_1 from "../assets/hex1.png";
@@ -29,138 +30,177 @@ import spiralIMG_13 from "../assets/spiral13.png";
 import spiralIMG_14 from "../assets/spiral14.png";
 import spiralIMG_15 from "../assets/spiral15.png";
 import spiralIMG_16 from "../assets/spiral16.png";
+import "../styles/Gameboard.scss";
 
 const Gameboard = (props) => {
   const [level, setLevel] = useState("circle");
   const [circle, setCircle] = useState([
     {
       img: circleIMG_1,
+      name: "circle1",
       clicked: false,
     },
     {
       img: circleIMG_2,
+      name: "circle2",
       clicked: false,
     },
   ]);
   const [hex, setHex] = useState([
     {
       img: hexIMG_1,
+      name: "hex1",
       clicked: false,
     },
     {
       img: hexIMG_2,
+      name: "hex2",
       clicked: false,
     },
     {
       img: hexIMG_3,
+      name: "hex3",
       clicked: false,
     },
     {
       img: hexIMG_4,
+      name: "hex4",
       clicked: false,
     },
   ]);
   const [triangle, setTriangle] = useState([
     {
       img: triangleIMG_1,
+      name: "triangle1",
       clicked: false,
     },
     {
       img: triangleIMG_2,
+      name: "triangle2",
       clicked: false,
     },
     {
       img: triangleIMG_3,
+      name: "triangle3",
       clicked: false,
     },
     {
       img: triangleIMG_4,
+      name: "triangle4",
       clicked: false,
     },
     {
       img: triangleIMG_5,
+      name: "triangle5",
       clicked: false,
     },
     {
       img: triangleIMG_6,
+      name: "triangle6",
       clicked: false,
     },
     {
       img: triangleIMG_7,
+      name: "triangle7",
       clicked: false,
     },
     {
       img: triangleIMG_8,
+      name: "triangle8",
       clicked: false,
     },
   ]);
   const [spiral, setSpiral] = useState([
     {
       img: spiralIMG_1,
+      name: "spiral1",
       clicked: false,
     },
     {
       img: spiralIMG_2,
+      name: "spiral2",
       clicked: false,
     },
     {
       img: spiralIMG_3,
+      name: "spiral3",
       clicked: false,
     },
     {
       img: spiralIMG_4,
+      name: "spiral4",
       clicked: false,
     },
     {
       img: spiralIMG_5,
+      name: "spiral5",
       clicked: false,
     },
     {
       img: spiralIMG_6,
+      name: "spiral6",
       clicked: false,
     },
     {
       img: spiralIMG_7,
+      name: "spiral7",
       clicked: false,
     },
     {
       img: spiralIMG_8,
+      name: "spiral8",
       clicked: false,
     },
     {
       img: spiralIMG_9,
+      name: "spiral9",
       clicked: false,
     },
     {
       img: spiralIMG_10,
+      name: "spiral10",
       clicked: false,
     },
     {
       img: spiralIMG_11,
+      name: "spiral11",
       clicked: false,
     },
     {
       img: spiralIMG_12,
+      name: "spiral12",
       clicked: false,
     },
     {
       img: spiralIMG_13,
+      name: "spiral13",
       clicked: false,
     },
     {
       img: spiralIMG_14,
+      name: "spiral14",
       clicked: false,
     },
     {
       img: spiralIMG_15,
+      name: "spiral15",
       clicked: false,
     },
     {
       img: spiralIMG_16,
+      name: "spiral16",
       clicked: false,
     },
   ]);
-  return;
+  return (
+    <div className="Gameboard">
+      <div className="spiral">
+        {spiral.map((item) => {
+          return <Card key={item.name} img={item.img} />;
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default Gameboard;

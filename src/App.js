@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Gameboard from "./components/Gameboard";
 import Header from "./components/Header";
-import "./styles/App.css";
+import "./styles/App.scss";
 
 const App = () => {
   const [roundScore, setRoundScore] = useState(0);

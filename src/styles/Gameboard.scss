@@ -1,0 +1,25 @@
+.Gameboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .spiral {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    align-items: stretch;
+    gap: 20px;
+  }
+}
+
+.Card {
+  background-color: pink;
+  padding: 10px;
+  img {
+    width: 225px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-self: center;
+  }
+}
