@@ -4,4 +4,6 @@ See a project demo [here](https://dwgrossberg.github.io/memory-card/) :point_lef
 
 A simple memory-card game built using React.
 
-All images sourced from (https://www.pexels.com/)
+![example-GIF](./src/assets/memory-card.gif)
+
+All images sourced from [pexels](https://www.pexels.com/)
