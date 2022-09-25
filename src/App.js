@@ -11,7 +11,12 @@ const App = () => {
   return (
     <div className="App">
       <Header highScore={highScore} score={score} />
-      <Gameboard />
+      <Gameboard
+        highScore={highScore}
+        setHighScore={setHighScore}
+        score={score}
+        setScore={setScore}
+      />
       <Footer />
     </div>
   );

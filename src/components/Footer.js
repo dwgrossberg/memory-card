@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Footer.scss";
-import gitHubIcon from "../assets/github.png";
+import gitHubIcon from "../assets/gitHubIconWhite.png";
 
 const Footer = (props) => {
   return (

@@ -11,7 +11,7 @@
 }
 
 .Card {
-  padding: 10px;
+  padding: 5px;
   border-radius: 3px;
   img {
     border-radius: 3px;
@@ -26,9 +26,12 @@
 }
 
 .spiral {
-  background-color: #c2e812;
+  background-color: #b4c2cf;
+  border: 10px solid #c2e812;
+  border-radius: 3px;
   &:hover {
-    background-color: #8b9eb7;
+    background-color: #c2e812;
+    border: 10px solid ghostwhite;
     cursor: pointer;
   }
 }

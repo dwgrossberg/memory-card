@@ -192,6 +192,24 @@ const Gameboard = (props) => {
       clicked: false,
     },
   ]);
+
+  //   useEffect(() => {
+  //     const addToScore = () => {
+  //       props.updateScore();
+  //     };
+  //     const cards = document.getElementsByClassName("Card");
+  //     Array.from(cards).forEach((elem) => {
+  //       elem.addEventListener("mousedown", addToScore);
+  //     });
+  //     return () => {
+  //       Array.from(cards).forEach((elem) => {
+  //         elem.removeEventListener("mousedown", addToScore);
+  //       });
+  //     };
+  //   }, [circle, hex, triangle, spiral]);
+
+  const { score, setScore, bestScore, setBestScore, updateScore } = props;
+
   return (
     <div className="Gameboard">
       <div className="Spirals">
@@ -201,6 +219,9 @@ const Gameboard = (props) => {
               key={item.name}
               img={item.img}
               name={item.name.replace(/[0-9]/g, "")}
+              score={score}
+              setScore={setScore}
+              updateScore={updateScore}
             />
           );
         })}
