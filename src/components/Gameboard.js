@@ -193,23 +193,55 @@ const Gameboard = (props) => {
     },
   ]);
 
+  const { score, setScore, highScore, setHighScore } = props;
+
+  const resetBoard = () => {
+    setLevel("circle");
+    setScore(0);
+    [circle, hex, triangle, spiral].forEach((array) => {
+      array.forEach((item) => {
+        item.clicked = false;
+      });
+    });
+  };
+
   const updateScore = (name) => {
     [circle, hex, triangle, spiral].forEach((array) => {
       array.forEach((item) => {
         if (name === item.name) {
+          console.log(item);
           if (item.clicked === false) {
             item.clicked = true;
             const newScore = score + 1;
             setScore(newScore);
+            updateLevel(array);
             if (score >= highScore) {
               setHighScore(newScore);
             }
           } else if (item.clicked === true) {
+            resetBoard();
           }
-          console.log(item);
         }
       });
     });
+  };
+
+  const updateLevel = (array) => {
+    if (array.every((item) => item.clicked === true)) {
+      switch (array[0].name.replace(/[0-9]/g, "")) {
+        case "circle":
+          setLevel("hex");
+          break;
+        case "hex":
+          setLevel("triangle");
+          break;
+        case "triangle":
+          setLevel("spiral");
+          break;
+        default:
+          console.log(array[0].name.replace(/[0-9]/g, ""));
+      }
+    }
   };
 
   const shuffle = (array) => {
@@ -226,35 +258,90 @@ const Gameboard = (props) => {
     return array;
   };
 
-  const { score, setScore, highScore, setHighScore } = props;
-
   useEffect(() => {
     [circle, hex, triangle, spiral].forEach((array) => {
       shuffle(array);
     });
-    console.log("hi");
-  }, [score]);
+  });
 
   return (
     <div className="Gameboard">
-      <div className="Spirals">
-        {spiral.map((item) => {
-          return (
-            <Card
-              key={item.name}
-              img={item.img}
-              item={item.name}
-              name={item.name.replace(/[0-9]/g, "")}
-              score={score}
-              setScore={setScore}
-              highScore={highScore}
-              setHighScore={setHighScore}
-              updateScore={updateScore}
-              circle={circle}
-            />
-          );
-        })}
-      </div>
+      {level === "circle" && (
+        <div className="Circles">
+          {circle.map((item) => {
+            return (
+              <Card
+                key={item.name}
+                img={item.img}
+                item={item.name}
+                name={item.name.replace(/[0-9]/g, "")}
+                score={score}
+                setScore={setScore}
+                highScore={highScore}
+                setHighScore={setHighScore}
+                updateScore={updateScore}
+              />
+            );
+          })}
+        </div>
+      )}
+      {level === "hex" && (
+        <div className="Hexes">
+          {hex.map((item) => {
+            return (
+              <Card
+                key={item.name}
+                img={item.img}
+                item={item.name}
+                name={item.name.replace(/[0-9]/g, "")}
+                score={score}
+                setScore={setScore}
+                highScore={highScore}
+                setHighScore={setHighScore}
+                updateScore={updateScore}
+              />
+            );
+          })}
+        </div>
+      )}
+      {level === "triangle" && (
+        <div className="Triangles">
+          {triangle.map((item) => {
+            return (
+              <Card
+                key={item.name}
+                img={item.img}
+                item={item.name}
+                name={item.name.replace(/[0-9]/g, "")}
+                score={score}
+                setScore={setScore}
+                highScore={highScore}
+                setHighScore={setHighScore}
+                updateScore={updateScore}
+              />
+            );
+          })}
+        </div>
+      )}
+      {level === "spiral" && (
+        <div className="Spirals">
+          {spiral.map((item) => {
+            return (
+              <Card
+                key={item.name}
+                img={item.img}
+                item={item.name}
+                name={item.name.replace(/[0-9]/g, "")}
+                score={score}
+                setScore={setScore}
+                highScore={highScore}
+                setHighScore={setHighScore}
+                updateScore={updateScore}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

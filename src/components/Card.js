@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Gameboard.scss";
 
 const Card = (props) => {
-  const { score, setScore, highScore, setHighScore, updateScore } = props;
+  const { updateScore } = props;
   const handleClick = (e) => {
     updateScore(e.target.id);
   };
