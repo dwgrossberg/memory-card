@@ -2,14 +2,14 @@ import React from "react";
 import "../styles/Gameboard.scss";
 
 const Card = (props) => {
-  const updateScore = () => {
-    console.log(props.score);
-    props.setScore(props.score + 1);
+  const { score, setScore, highScore, setHighScore, updateScore } = props;
+  const handleClick = (e) => {
+    updateScore(e.target.id);
   };
 
   return (
-    <div className={`Card ${props.name}`} onClick={updateScore}>
-      <img alt="" src={props.img}></img>
+    <div className={`Card ${props.name}`} onClick={handleClick}>
+      <img id={props.item} alt="" src={props.img}></img>
     </div>
   );
 };

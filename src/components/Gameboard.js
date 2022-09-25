@@ -193,22 +193,47 @@ const Gameboard = (props) => {
     },
   ]);
 
-  //   useEffect(() => {
-  //     const addToScore = () => {
-  //       props.updateScore();
-  //     };
-  //     const cards = document.getElementsByClassName("Card");
-  //     Array.from(cards).forEach((elem) => {
-  //       elem.addEventListener("mousedown", addToScore);
-  //     });
-  //     return () => {
-  //       Array.from(cards).forEach((elem) => {
-  //         elem.removeEventListener("mousedown", addToScore);
-  //       });
-  //     };
-  //   }, [circle, hex, triangle, spiral]);
+  const updateScore = (name) => {
+    [circle, hex, triangle, spiral].forEach((array) => {
+      array.forEach((item) => {
+        if (name === item.name) {
+          if (item.clicked === false) {
+            item.clicked = true;
+            const newScore = score + 1;
+            setScore(newScore);
+            if (score >= highScore) {
+              setHighScore(newScore);
+            }
+          } else if (item.clicked === true) {
+          }
+          console.log(item);
+        }
+      });
+    });
+  };
 
-  const { score, setScore, bestScore, setBestScore, updateScore } = props;
+  const shuffle = (array) => {
+    let currentIndex = array.length;
+    let randomIndex;
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
+  };
+
+  const { score, setScore, highScore, setHighScore } = props;
+
+  useEffect(() => {
+    [circle, hex, triangle, spiral].forEach((array) => {
+      shuffle(array);
+    });
+    console.log("hi");
+  }, [score]);
 
   return (
     <div className="Gameboard">
@@ -218,10 +243,14 @@ const Gameboard = (props) => {
             <Card
               key={item.name}
               img={item.img}
+              item={item.name}
               name={item.name.replace(/[0-9]/g, "")}
               score={score}
               setScore={setScore}
+              highScore={highScore}
+              setHighScore={setHighScore}
               updateScore={updateScore}
+              circle={circle}
             />
           );
         })}
